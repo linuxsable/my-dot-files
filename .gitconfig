@@ -1,0 +1,29 @@
+[core]
+	excludesfile = /Users/<YOUR UNIX USERNAME>/.gitignore_global
+	editor = /usr/bin/vim
+[user]
+	name = <YOUR NAME>
+	email = <YOUR EMAIL>
+[commit]
+	template = /Users/<YOUR UNIX USERNAME>/.stCommitMsg
+[alias]
+	co = checkout
+	c = commit
+	b = branch
+	s = status
+	p = push
+	pu = push --set-upstream origin
+	pr = pull --rebase
+	d = diff
+	r = rebase
+	f = fetch
+	rh = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -50
+	stats = shortlog -s -n
+	br = !git for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[merge]
+	tool = opendiff
